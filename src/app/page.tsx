@@ -84,7 +84,7 @@ export default function Home() {
           />
         </header>
         <article className="w-full h-auto flex flex-col items-center bg-white">
-          <section className="flex w-5/6 h-2/3  items-center justify-around">
+          <section className="flex w-5/6 h-96  items-center justify-around">
             <div>
               <h1 className=" text-6xl font-light text-gray-800 mb-10">
                 Data<b className="font-bold text-lime-500">ged,</b>
@@ -112,9 +112,10 @@ export default function Home() {
             <img
               src="https://static.wixstatic.com/media/ed2f55_f081e97fa61e46ebb72fd4faa5ab2cec~mv2.png/v1/fill/w_652,h_490,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Sistema030822.png"
               alt=""
+              className="h-full"
             />
           </section>
-          <section className="flex w-full h-96 bg-lime-500  items-center justify-around shadow-inner shadow-gray-800 ">
+          <section className="flex w-full h-80 bg-lime-500  items-center justify-around shadow-inner shadow-gray-800 ">
             <section className=" w-5/6 h-3/4 bg-lime-600 items-center flex relative overflow-hidden">
               <div className="group relative h-full w-1/3 border-r-2 bg-lime-500 border-slate-100 flex transition-all duration-700 items-center justify-center hover:z-10 hover:w-3/4 hover:bg-lime-600">
                 <img
@@ -184,7 +185,7 @@ export default function Home() {
               <a className="mb-6" href="https://wa.me/5585992229046">
                 {"(85)9.92229046"}
               </a>
-              <a className="mb-6" href="contato@dataged.com">
+              <a className="mb-6" href="mailto:contato@dataged.com">
                 contato@dataged.com
               </a>
             </section>
