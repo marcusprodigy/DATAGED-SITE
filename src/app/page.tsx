@@ -21,26 +21,66 @@ export default function Home() {
           alt="LogoDataged"
           className="w-auto h-2/4"
         />
-        <nav className="flex h-full items-center">
-          <ul className="flex h-full items-center justify-end  gap-10 text-black text-md font-thin">
-            <li>
+        <nav className="flex z-30 h-full items-center">
+          <ul className="flex  h-full items-center justify-end text-black text-md font-thin">
+            <li className="relative justify-center group transition-colorsduration-200 hover:bg-gray-200  w-full h-full items-center flex  ">
               <input
                 type="button"
                 value="Dataged"
-                className=" cursor-pointer"
+                className=" cursor-pointer z-10 h-full group-hover:bg-gray-200 px-10  bg-white"
               />
+              <ul className=" bg-gray-100 w-full h-auto absolute duration-500 -top-6 transition-transform  group-hover:translate-y-24 rounded-xl">
+                <li className="flex items-center h-10 justify-center text-sm font-semibold text-lime-600 hover:rounded-xl hover:bg-lime-200">
+                  Quem Somos
+                </li>
+                <li className="flex items-center h-10 justify-center font-semibold text-lime-600 hover:rounded-xl hover:bg-lime-200">
+                  Onde Atuamos
+                </li>
+              </ul>
             </li>
-            <li>
-              <input type="button" value="Sistema" />
+            <li className="relative justify-center group transition-colors  duration-200 hover:bg-gray-200  h-full items-center flex  ">
+              <input
+                type="button"
+                value="Sistema"
+                className=" cursor-pointer z-10 h-full  px-14  group-hover:bg-gray-200 bg-white"
+              />{" "}
+              <ul className=" bg-gray-100 w-full h-auto absolute duration-500 -top-6 transition-transform  group-hover:translate-y-24 rounded-xl">
+                <li className="flex items-center h-10 justify-center font-semibold text-lime-600 hover:rounded-xl hover:bg-lime-200">
+                  Vantagens
+                </li>
+                <li className="flex items-center text-sm h-10 justify-center font-semibold text-lime-600 hover:rounded-xl hover:bg-lime-200">
+                  Dataged PocketFlow
+                </li>
+              </ul>
             </li>
-            <li>
-              <input type="button" value="Serviços" />
+            <li className="relative justify-center group transition-colors duration-200 hover:bg-gray-200 h-full items-center flex  ">
+              <input
+                type="button"
+                value="Serviços"
+                className=" cursor-pointer z-10 h-full px-10  group-hover:bg-gray-200  bg-white"
+              />{" "}
+              <ul className=" bg-gray-100 w-full h-auto absolute duration-500 -top-6 transition-transform  group-hover:translate-y-24 rounded-xl">
+                <li className="flex items-center h-10 justify-center font-semibold text-lime-600 hover:rounded-xl hover:bg-lime-200">
+                  DatagedSystem
+                </li>
+                <li className="flex items-center h-10 justify-center font-semibold text-lime-600 hover:rounded-xl hover:bg-lime-200">
+                  Icity
+                </li>
+              </ul>
             </li>
-            <li>
-              <input type="button" value="Nossos Clientes" />
+            <li className="relative justify-center group transition-colors duration-200 hover:bg-gray-200 h-full items-center flex  ">
+              <input
+                type="button"
+                value="Nossos Clientes"
+                className=" cursor-pointer  px-10  z-10 h-full group-hover:bg-gray-200  bg-white"
+              />{" "}
             </li>
-            <li>
-              <input type="button" value="Login Dataged" />
+            <li className="relative justify-center group transition-colors duration-200 hover:bg-gray-200 h-full items-center flex  ">
+              <input
+                type="button"
+                value="Login Dataged"
+                className=" cursor-pointer z-10 h-full group-hover:bg-gray-200  px-10  bg-white"
+              />{" "}
             </li>
           </ul>
           <button className="ml-8 flex items-center justify-center h-2/3 w-32  bg-lime-500 hover:bg-cyan-700 transition-colors duration-300 rounded-md">
@@ -152,45 +192,48 @@ export default function Home() {
             <img
               src="https://static.wixstatic.com/media/ed2f55_f79de309ef1b481f958ddcd15e86e6e0~mv2.png/v1/fill/w_745,h_420,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ICity.png"
               alt=""
-              className="h-full"
+              className=" h-80"
             />
-            <div>
-              <h1 className="mt-10 text-6xl font-light text-gray-800 mb-10">
+            <div className="pl-5">
+              <h1 className="mt-10 text-5xl font-light text-gray-800 mb-10">
                 Ponte entre governo
                 <br /> e cidadãos
               </h1>
-              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+              <h2 className=" text-xl mb-3 font-medium text-gray-800">
                 Conta única
               </h2>
-              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+              <h2 className=" text-xl mb-3 font-medium text-gray-800">
                 Agendamento de serviços{" "}
               </h2>
-              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+              <h2 className=" text-xl mb-3 font-medium text-gray-800">
                 Teleatendimento{" "}
               </h2>
-              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+              <h2 className=" text-xl mb-3 font-medium text-gray-800">
                 Chatbot inteligente para atendimento virtual{" "}
               </h2>
-              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+              <h2 className=" text-xl mb-3 font-medium text-gray-800">
                 Central de serviços
               </h2>
 
               <div className="flex gap-4 mt-10 mb-10">
-                <button className=" bg-cyan-700 w-64 h-16  rounded-md hover:bg-green-800 active:shadow-inner active:shadow-black">
+                <button className=" bg-cyan-700 w-64 h-16  rounded-md active:shadow-inner hover:bg-cyan-800 active:shadow-black">
                   Saiba Mais sobre ICities
                 </button>
-                <button className="  bg-green-700 w-64  h-16 rounded-md hover:bg-cyan-800 active:shadow-inner active:shadow-black">
+                <button className="  bg-green-700 w-64  h-16 rounded-md hover:bg-green-800 active:shadow-inner active:shadow-black">
                   Entre em contato
                 </button>
               </div>
             </div>
           </section>
-          <section className="flex w-screen h-72 bg-gray-300 items-center justify-around">
-            <section className=" w-5/6 h-3/4 bg-gray-300 items-center flex relative overflow-hidden">
+          <section className="flex flex-col w-screen h-72 bg-gray-300 items-center justify-around">
+            <h1 className=" mb-10 mt-10 text-black text-2xl font-bold ">
+              Comece a transformar a sua empresa com os serviços Dataged
+            </h1>
+            <section className="mb-10 w-5/6 h-3/4 bg-gray-300 items-center flex relative overflow-hidden">
               <div className="group relative h-full w-1/6  bg-gray-300 border-r-2 border-black  flex transition-all duration-700 items-center justify-center hover:z-10 hover:w-3/4">
                 <img
                   alt=""
-                  src="https://static.wixstatic.com/media/ed2f55_03488bbaf13744fd90cafb9f97625905~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/computador.png"
+                  src="monitor.svg"
                   className=" h-14 z-0 w-auto transition-all duration-700 ease-in-out group-hover:-translate-x-40 group-hover:absolute"
                 />
                 <div className="absolute w-2/4 right-10  transition-all text-black duration-500 opacity-0 group-hover:opacity-100">
@@ -202,11 +245,11 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="border-r-2 text-black border-black  group relative h-full w-1/6 border-r-2bg-gray-300 border-slate-100 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
+              <div className="border-r-2 text-black border-black group relative h-full w-1/6 border-r-2bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
                 <img
                   alt=""
-                  src="https://static.wixstatic.com/media/ed2f55_d7feeed9d9da47f3af68794aee4cada1~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/compartilhamento-de-nuvem.png"
-                  className="h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute "
+                  src="cloud.svg"
+                  className="h-16 w-auto transition-all  duration-700 group-hover:-translate-x-40 group-hover:absolute "
                 />
                 <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
                   <h3 className=" text-xl font-extrabold">Nuvem Azure </h3>
@@ -220,7 +263,7 @@ export default function Home() {
               <div className="border-r-2 text-black border-black  group relative h-full w-1/6  bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
                 <img
                   alt=""
-                  src="https://static.wixstatic.com/media/ed2f55_819b91ef2f514e0881b784750e649806~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/documento-assinado.png"
+                  src="file.svg"
                   className="h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute  "
                 />
                 <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
@@ -237,7 +280,7 @@ export default function Home() {
               <div className="border-r-2 text-black border-black  group relative h-full w-1/6  bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
                 <img
                   alt=""
-                  src="https://static.wixstatic.com/media/ed2f55_d708cfd7b51b4150aeb61dfbaeef4ee9~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/caixa-de-entrada.png"
+                  src="scan.svg"
                   className="h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute  "
                 />
                 <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
@@ -252,7 +295,7 @@ export default function Home() {
               <div className="border-r-2 text-black border-black  group relative h-full w-1/6 bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
                 <img
                   alt=""
-                  src="https://static.wixstatic.com/media/ed2f55_0253b65547fb4628b5de1328bdb354d9~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/lista.png"
+                  src="list.svg"
                   className="h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute  "
                 />
                 <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
@@ -267,15 +310,17 @@ export default function Home() {
               <div className=" group relative  text-black h-full w-1/6  bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
                 <img
                   alt=""
-                  src="https://static.wixstatic.com/media/ed2f55_bd66bf82111a4512a87495c6ad83f3a4~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/caixa.png"
+                  src="box.svg"
                   className=" h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute  "
                 />
                 <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
                   <h3 className=" text-xl font-extrabold">
-                  Tratamento arquivístico                  </h3>
+                    Tratamento arquivístico{" "}
+                  </h3>
                   <br />
                   <p className=" text-md font-light">
-                  Consultoria completa para gestão física de documentos com software de gerenciamento
+                    Consultoria completa para gestão física de documentos com
+                    software de gerenciamento
                   </p>
                 </div>
               </div>
