@@ -1,38 +1,20 @@
 "use client";
-import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
-  const sliderElement = useRef<HTMLImageElement | null>(null);
-
-  useEffect(() => {
-    const moveSlide = () => {
-      if (sliderElement.current !== null) {
-        const currentTransform = window.getComputedStyle(
-          sliderElement.current
-        ).transform;
-        const currentTranslateX = parseInt(currentTransform.split(",")[4]) || 0;
-
-        // Defina o limite para inverter a direção
-        const limit = -100;
-
-        // Verifique se atingiu o limite
-        const newTranslateX =
-          currentTranslateX <= limit ? 0 : currentTranslateX - 100;
-
-        sliderElement.current.style.transform = `translateX(${newTranslateX}%)`;
-      }
-    };
-
-    // Executar a função a cada segundo
-    const intervalId = setInterval(moveSlide, 5000);
-
-    // Limpar o intervalo quando o componente for desmontado
-    return () => clearInterval(intervalId);
-  }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
-    <body className="w-screen h-screen bg-white">
+    <main className="w-screen h-auto over bg-white">
       <header className="z-20 w-screen h-16 px-10 fixed flex items-center justify-between bg-white shadow-md shadow-slate-600">
         <img
           src="https://static.wixstatic.com/media/ed2f55_6dfd5ceccc1d4331877ab0defcf7b1ec~mv2.png/v1/fill/w_252,h_54,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/1-Logo-Dataged.png"
@@ -40,7 +22,7 @@ export default function Home() {
           className="w-auto h-2/4"
         />
         <nav className="flex h-full items-center">
-          <ul className="flex h-full items-center justify-end gap-8 text-gray-600 text-md font-thin">
+          <ul className="flex h-full items-center justify-end  gap-10 text-black text-md font-thin">
             <li>
               <input
                 type="button"
@@ -66,25 +48,21 @@ export default function Home() {
           </button>
         </nav>
       </header>
-      <main className="w-full h-screen overscroll-y-auto text-white pt-16">
-        <header className="w-full  flex  overflow-hidden">
-          <img
-            ref={sliderElement}
-            src="https://static.wixstatic.com/media/ed2f55_9d03e50461094dfe86e2402e3d48d271~mv2.png/v1/fill/w_1310,h_328,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ed2f55_9d03e50461094dfe86e2402e3d48d271~mv2.png"
-            alt=""
-            id="style"
-            className=" transition-all duration-700 ease-in-out w-full h-auto"
-          />
-          <img
-            ref={sliderElement}
-            src="https://static.wixstatic.com/media/ed2f55_90aaedb99554475e9919666c3d827baf~mv2.png/v1/fill/w_1310,h_328,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ed2f55_90aaedb99554475e9919666c3d827baf~mv2.png"
-            alt=""
-            id="style"
-            className=" transition-all duration-700 ease-in-out  w-full h-auto"
-          />
-        </header>
+      <Slider {...settings}>
+        <img
+          src="https://static.wixstatic.com/media/ed2f55_9d03e50461094dfe86e2402e3d48d271~mv2.png/v1/fill/w_1310,h_328,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ed2f55_9d03e50461094dfe86e2402e3d48d271~mv2.png"
+          alt=""
+          className="w-full h-auto   transition-all duration-700 ease-in-out"
+        />
+        <img
+          src="https://static.wixstatic.com/media/ed2f55_90aaedb99554475e9919666c3d827baf~mv2.png/v1/fill/w_1310,h_328,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/ed2f55_90aaedb99554475e9919666c3d827baf~mv2.png"
+          alt=""
+          className="w-full h-auto transition-all duration-700 ease-in-out  "
+        />
+      </Slider>
+      <main className="w-full overscroll-y-auto flex flex-col items-center text-white pt-16">
         <article className="w-full h-auto flex flex-col items-center bg-white">
-          <section className="flex w-5/6 h-96  items-center justify-around">
+          <section className="flex w-5/6 items-center justify-around">
             <div>
               <h1 className=" text-6xl font-light text-gray-800 mb-10">
                 Data<b className="font-bold text-lime-500">ged,</b>
@@ -124,7 +102,7 @@ export default function Home() {
                   className=" h-30 z-0 w-auto transition-all duration-700 ease-in-out group-hover:-translate-x-40 group-hover:absolute"
                 />
                 <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
-                  <h3 className=" text-xl font-extrabold">
+                  <h3 className=" text-xl font-e  xtrabold">
                     Workflow integrado
                   </h3>
                   <br />
@@ -165,6 +143,139 @@ export default function Home() {
                   <p className=" text-md font-light">
                     Gestão completa de documentos, da digitalização e indexação
                     à criação de documentos pelo editor do sistema.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </section>
+          <section className="flex w-5/6 items-center justify-around">
+            <img
+              src="https://static.wixstatic.com/media/ed2f55_f79de309ef1b481f958ddcd15e86e6e0~mv2.png/v1/fill/w_745,h_420,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ICity.png"
+              alt=""
+              className="h-full"
+            />
+            <div>
+              <h1 className="mt-10 text-6xl font-light text-gray-800 mb-10">
+                Ponte entre governo
+                <br /> e cidadãos
+              </h1>
+              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+                Conta única
+              </h2>
+              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+                Agendamento de serviços{" "}
+              </h2>
+              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+                Teleatendimento{" "}
+              </h2>
+              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+                Chatbot inteligente para atendimento virtual{" "}
+              </h2>
+              <h2 className=" text-2xl mb-3 font-medium text-gray-800">
+                Central de serviços
+              </h2>
+
+              <div className="flex gap-4 mt-10 mb-10">
+                <button className=" bg-cyan-700 w-64 h-16  rounded-md hover:bg-green-800 active:shadow-inner active:shadow-black">
+                  Saiba Mais sobre ICities
+                </button>
+                <button className="  bg-green-700 w-64  h-16 rounded-md hover:bg-cyan-800 active:shadow-inner active:shadow-black">
+                  Entre em contato
+                </button>
+              </div>
+            </div>
+          </section>
+          <section className="flex w-screen h-72 bg-gray-300 items-center justify-around">
+            <section className=" w-5/6 h-3/4 bg-gray-300 items-center flex relative overflow-hidden">
+              <div className="group relative h-full w-1/6  bg-gray-300 border-r-2 border-black  flex transition-all duration-700 items-center justify-center hover:z-10 hover:w-3/4">
+                <img
+                  alt=""
+                  src="https://static.wixstatic.com/media/ed2f55_03488bbaf13744fd90cafb9f97625905~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/computador.png"
+                  className=" h-14 z-0 w-auto transition-all duration-700 ease-in-out group-hover:-translate-x-40 group-hover:absolute"
+                />
+                <div className="absolute w-2/4 right-10  transition-all text-black duration-500 opacity-0 group-hover:opacity-100">
+                  <h3 className=" text-xl font-extrabold">Sistema Dataged </h3>
+                  <br />
+                  <p className=" text-md font-light">
+                    Moderno e completo de gestão de informações com workflow e
+                    assinador digital integrados
+                  </p>
+                </div>
+              </div>
+              <div className="border-r-2 text-black border-black  group relative h-full w-1/6 border-r-2bg-gray-300 border-slate-100 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
+                <img
+                  alt=""
+                  src="https://static.wixstatic.com/media/ed2f55_d7feeed9d9da47f3af68794aee4cada1~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/compartilhamento-de-nuvem.png"
+                  className="h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute "
+                />
+                <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
+                  <h3 className=" text-xl font-extrabold">Nuvem Azure </h3>
+                  <br />
+                  <p className=" text-md font-light">
+                    Hospedagem de dados em uma das nuvens mais poderosas e
+                    seguras do mundo
+                  </p>
+                </div>
+              </div>
+              <div className="border-r-2 text-black border-black  group relative h-full w-1/6  bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
+                <img
+                  alt=""
+                  src="https://static.wixstatic.com/media/ed2f55_819b91ef2f514e0881b784750e649806~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/documento-assinado.png"
+                  className="h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute  "
+                />
+                <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
+                  <h3 className=" text-xl font-extrabold">
+                    Assinatura eletrônica{" "}
+                  </h3>
+                  <br />
+                  <p className=" text-md font-light">
+                    Certificação digital ICP Brasil e emissão de documentos via
+                    e-mail, SMS e Whatsapp
+                  </p>
+                </div>
+              </div>
+              <div className="border-r-2 text-black border-black  group relative h-full w-1/6  bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
+                <img
+                  alt=""
+                  src="https://static.wixstatic.com/media/ed2f55_d708cfd7b51b4150aeb61dfbaeef4ee9~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/caixa-de-entrada.png"
+                  className="h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute  "
+                />
+                <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
+                  <h3 className=" text-xl font-extrabold">Digitalização </h3>
+                  <br />
+                  <p className=" text-md font-light">
+                    Digitalização de documentos com equipamento moderno e equipe
+                    especializada
+                  </p>
+                </div>
+              </div>
+              <div className="border-r-2 text-black border-black  group relative h-full w-1/6 bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
+                <img
+                  alt=""
+                  src="https://static.wixstatic.com/media/ed2f55_0253b65547fb4628b5de1328bdb354d9~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/lista.png"
+                  className="h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute  "
+                />
+                <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
+                  <h3 className=" text-xl font-extrabold">Indexação</h3>
+                  <br />
+                  <p className=" text-md font-light">
+                    Acesse os documentos digitalizados com mais facilidade e
+                    rapidez com a indexação Dataged
+                  </p>
+                </div>
+              </div>
+              <div className=" group relative  text-black h-full w-1/6  bg-gray-300 flex items-center justify-center transition-all duration-700  hover:w-full hover:z-10 ">
+                <img
+                  alt=""
+                  src="https://static.wixstatic.com/media/ed2f55_bd66bf82111a4512a87495c6ad83f3a4~mv2.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/caixa.png"
+                  className=" h-14 w-auto transition-all duration-700 group-hover:-translate-x-40 group-hover:absolute  "
+                />
+                <div className="absolute w-2/4 right-10  transition-all duration-500 opacity-0 group-hover:opacity-100">
+                  <h3 className=" text-xl font-extrabold">
+                  Tratamento arquivístico                  </h3>
+                  <br />
+                  <p className=" text-md font-light">
+                  Consultoria completa para gestão física de documentos com software de gerenciamento
                   </p>
                 </div>
               </div>
@@ -224,6 +335,6 @@ export default function Home() {
           </article>
         </footer>
       </main>
-    </body>
+    </main>
   );
 }
